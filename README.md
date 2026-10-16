@@ -2,11 +2,35 @@
 
 A FastAPI REST API for managing student records with SQLite database and optional AI queries via Ollama.
 
-## Quick Start
+## Prerequisites
+
+- Python 3.10 or higher
+- Git
+- (Optional) [Ollama](https://ollama.com) for the AI query endpoint
+
+## Installation
+
+Clone the repository and set up a virtual environment:
 
 ```bash
+git clone <your-repo-url>
 cd student_crud_project
-.\venv\Scripts\python.exe -m uvicorn main:app --reload
+
+# Create virtual environment
+python -m venv venv
+
+# Activate it
+.\venv\Scripts\Activate.ps1     # Windows (PowerShell)
+source venv/bin/activate        # Linux / macOS
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## Run
+
+```bash
+python -m uvicorn main:app --reload
 ```
 
 API runs at: **http://localhost:8000**  
@@ -59,11 +83,6 @@ curl -X POST http://localhost:8000/ai/query -H "Content-Type: application/json" 
 ├── ai_service.py    # Ollama integration
 └── requirements.txt # Dependencies
 ```
-
-## Requirements
-
-- Python 3.10+
-- Dependencies in `requirements.txt` (fastapi, uvicorn, sqlalchemy, pydantic, httpx)
 
 ## Optional: AI Queries
 
